@@ -1,0 +1,2 @@
+class Shorttermtruck < ApplicationRecord
+end

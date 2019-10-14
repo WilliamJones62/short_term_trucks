@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing Temporary fuel card</h1>
+<h2>Last Updated: <%= display_date(@shorttermtruck.updated_at) %> By: <%= @shorttermtruck.user_id%></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Truck</th>
+      <th>EZpass</th>
+      <th>Wexcard</th>
+      <th>Given</th>
+      <th>Returned</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <%= @shorttermtruck.truck  %> </td>
+      <td> <%= @shorttermtruck.ezpass  %> </td>
+      <td> <%= @shorttermtruck.wexcard  %> </td>
+      <td> <%= display_date(@shorttermtruck.given) %> </td>
+      <td> <%= display_date(@shorttermtruck.returned) %> </td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_shorttermtruck_path(@shorttermtruck) %>
+<%= link_to 'Back', shorttermtrucks_path %>

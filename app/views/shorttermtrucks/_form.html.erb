@@ -1,0 +1,46 @@
+<%= form_with(model: shorttermtruck, local: true) do |form| %>
+  <% if shorttermtruck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shorttermtruck.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% shorttermtruck.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th> <%= form.label :truck %> </th>
+        <th> <%= form.label :ezpass, 'EZ pass' %> </th>
+        <th> <%= form.label :wexcard %> </th>
+        <th> <%= form.label :given %> </th>
+        <th> <%= form.label :returned %> </th>
+        <th hidden> <%= form.label :user_id %> </th>
+        <% if @new %>
+          <th hidden> <%= form.label :created_by %> </th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= form.text_field :truck  %> </td>
+        <td> <%= form.text_field :ezpass  %> </td>
+        <td> <%= form.text_field :wexcard  %> </td>
+        <td> <%= form.date_field :given %> </td>
+        <td> <%= form.date_field :returned %> </td>
+        <td hidden> <%= form.text_field :user_id, :value => @user  %> </td>
+        <% if !@new.blank? %>
+          <td hidden> <%= form.text_field :created_by, :value => @user  %> </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= form.submit 'Submit' %>
+  </div>
+<% end %>

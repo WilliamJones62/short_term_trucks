@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Temporary fuel cards</h1>
+
+<table id="normal_dt"  class="stripe" class="mytable" class="display" cellspacing="0" >
+  <thead>
+    <tr>
+      <th>Truck</th>
+      <th>EZpass</th>
+      <th>Wexcard</th>
+      <th>Given</th>
+      <th>Returned</th>
+      <th>Created by</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shorttermtrucks.each do |shorttermtruck| %>
+      <tr>
+        <td><%= shorttermtruck.truck %></td>
+        <td><%= shorttermtruck.ezpass %></td>
+        <td><%= shorttermtruck.wexcard %></td>
+        <td><%= display_date(shorttermtruck.given) %></td>
+        <td><%= display_date(shorttermtruck.returned) %></td>
+        <td><%= shorttermtruck.created_by %></td>
+        <td><%= link_to 'Show', shorttermtruck %></td>
+        <td><%= link_to 'Edit', edit_shorttermtruck_path(shorttermtruck) %></td>
+        <td><%= link_to 'Delete', shorttermtruck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New temporary fuel card', new_shorttermtruck_path %>

@@ -1,0 +1,7 @@
+<h1>Editing Temporary fuel card</h1>
+<h2>Last Updated: <%= display_date(@shorttermtruck.updated_at) %> By: <%= @shorttermtruck.user_id%></h2>
+
+<%= render 'form', shorttermtruck: @shorttermtruck %>
+
+<%= link_to 'Show', @shorttermtruck %>
+<%= link_to 'Back', shorttermtrucks_path %>

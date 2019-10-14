@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  truck: MyString
+  ezpass: MyString
+  wexcard: MyString
+  given: 2019-07-03
+  returned: 2019-07-03
+  employee: MyString
+  user_id: MyString
+
+two:
+  truck: MyString
+  ezpass: MyString
+  wexcard: MyString
+  given: 2019-07-03
+  returned: 2019-07-03
+  employee: MyString
+  user_id: MyString
